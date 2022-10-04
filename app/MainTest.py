@@ -4,13 +4,13 @@ import Main as api
 class MainTest (test.TestCase):
     def setUp(self):
         self.main = api
-    def test_ShouldReturnTrueIsPrimeNumber(self):
+    def testShouldReturnTrueIsPrimeNumber(self):
         self.main = api
         self.assertEqual(self.main.validate_number(5), True)
-    def test_ShouldReturnFalseIsNotAPrimeNumber(self):
+    def testShouldReturnFalseIsNotAPrimeNumber(self):
         self.main = api
         self.assertEqual(self.main.validate_number(1), False)
-    def test_ShouldReturnFalseIsNotsPrimeNumber(self):
+    def testShouldReturnFalseIsNotsPrimeNumber(self):
         self.main = api
         self.assertEqual(self.main.validate_number(0), False)
     def testShouldReturnFalseIsNotIsAPrimeNumber(self):
