@@ -13,8 +13,8 @@ def hello():
 
 @app.get("/IsPrime/{numero}")
 def validate_number(number: int):
+    if number < 2 or number <=0: return False
     remainderCount = calculate_is_prime_number(number)
-    if number < 2: return False
     return True if remainderCount==0 else False
 
 def calculate_is_prime_number(number: int):
@@ -26,10 +26,10 @@ def calculate_is_prime_number(number: int):
     
 @app.get("/fibonacci/{numero}")
 def calculate_fibonacci(number: int):
-    number_init, end_number, sucesion = 0, 1, []
-    while end_number <= number+1:
+    number_init, end_number, sucesion = 1, 1, []
+    for x in range(number):
         sucesion.append(number_init)
         sucesion.append(end_number)
         number_init = number_init + end_number
         end_number = number_init + end_number
-    return {"Sucesión":sucesion}
+    return {"Número que correspone a la posición": sucesion[number]}
